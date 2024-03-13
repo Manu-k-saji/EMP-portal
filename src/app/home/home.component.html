@@ -1,0 +1,42 @@
+<div class="container-fluid">
+    <div class="row w-100">
+        <div *ngIf="sideBarStatus" style="height: 92vh;width: fit-content;"class='side-bar col-lg-2  bg-dark d-flex flex-column p-3'>
+            <a style="text-decoration: none; color: white;" class="fw-bolder mb-3" routerLink="/dashboard">HOME</a>
+            <a style="text-decoration: none; color: white;"class="fw-bolder" routerLink="/users">USERS</a>
+<button (click)="logout()" class="btn  mt-auto text-light fw-bolder">Logout<i class="fa-solid fa-right-from-bracket ms-1"></i></button>
+        </div>
+        <div  class="col">
+<div  class="row pt-2" >
+    <div class="col-lg-8">
+<div style="height: 180px;background-image: url('https://wallpaperaccess.com/full/7413125.jpg');" 
+class="banner rounded p-3 d-flex align-items-center shadow">
+    <h1 class="fw-bolder text-dark"><i style="cursor: pointer;" (click)="menuBarClicked()" class="fa-solid fa-bars me-3"></i> Welcome {{adminName}} </h1>
+</div>
+<div class="row mt-3 ms-1">
+    <div  class="col-lg-5  shadow mb-5">
+<!-- calender -->
+<app-calender></app-calender>
+    </div>
+    <div class="col-lg-1"></div>
+    <div class="col-lg-6 border rounded shadow mb-5">
+        <!-- chart -->
+        <app-chart></app-chart>
+    </div>
+</div>
+    </div>
+    <div class="col-lg-4 ">
+<!-- update admin -->
+<div style="height: 400px;" class="edit-admin border rounded shadow pt-2 ">
+<app-update-admin (onAdminChange)="onAdminChange($event)"></app-update-admin>
+</div>
+<div style="height: 122px;background-image: url('https://wallpaperaccess.com/full/7413125.jpg');" 
+class=" justify-content-center rounded p-3 d-flex align-items-center shadow mt-3 ">
+    <h3 class="fw-bolder text-dark"><i class="fa-solid fa-users me-2"></i>Employee : {{userCount}}</h3>
+</div>
+</div>
+</div>
+        </div>
+    </div>
+</div>
+
+
